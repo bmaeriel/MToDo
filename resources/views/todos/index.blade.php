@@ -15,6 +15,6 @@
         @endforelse
     </ul>
     <div class="d-flex justify-content-center">
-        {{ $todos->links() }}
+        {{ $todos->links() }} {{-- <- display paginate links --}}
     </div>
 @endsection

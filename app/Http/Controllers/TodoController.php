@@ -68,7 +68,10 @@ class TodoController extends Controller
      */
     public function show($id)
     {
-        //
+        $todo = Todo::findOrFail($id);
+        return view('todos.show', [
+          'todo' => $todo,
+        ]);
     }
 
     /**
@@ -102,6 +105,12 @@ class TodoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //delete the Todo
+        $todo = Todo::findOrFail($id);
+        $todo->delete();
+        //redirect to a specified route with flash message
+        return redirect()
+            ->route('todos.index')
+            ->with('status','Deleted the selected Todo!');
     }
 }

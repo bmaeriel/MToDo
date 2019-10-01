@@ -13,7 +13,7 @@
     @include('inc.navbar')
 
     <main class="container mt-4">
-        @yield('content')
+        @yield('content') {{-- <- index.blade section content --}}
     </main>
     @include('inc.footer')
     <script src="{{asset('js/app.js')}}"></script> {{-- <- bootstrap js --}}
