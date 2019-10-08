@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class TodoController extends Controller
 {
+  /* block access to all the methods from unaauthenticated users*/
+  public function __construct(){
+    $this->middleware('auth');
+  }
     /**
      * Display a listing of the resource.
      *
@@ -136,4 +140,6 @@ class TodoController extends Controller
             ->route('todos.index')
             ->with('status','Deleted the selected Todo!');
     }
+
+
 }
