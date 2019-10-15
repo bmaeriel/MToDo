@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect()->route('todos.index');
+    return redirect()->route('home');
 });
 
 Route::get('/todos', 'TodoController@index')->name('todos.index');
@@ -28,3 +28,7 @@ Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/profile','ProfileController@index')->name('profile.index');
+Route::put('/profile','ProfileController@update')->name('profile.update'); //updating a resource
